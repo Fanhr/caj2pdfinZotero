@@ -1,0 +1,31 @@
+{
+  "name": "zotero-caj2pdf",
+  "version": "1.0.0",
+  "description": "Zotero CAJ to PDF converter plugin",
+  "config": {
+    "addonName": "CAJ2PDF Converter",
+    "addonID": "caj2pdf@fanhr.com",
+    "addonRef": "caj2pdf",
+    "addonInstance": "CAJ2PDF",
+    "prefsPrefix": "extensions.zotero.caj2pdf",
+    "releasePage": "https://github.com/Fanhr/caj2pdfinZotero/releases/latest/download/",
+    "updateJSON": "https://raw.githubusercontent.com/Fanhr/caj2pdfinZotero/main/update.json"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "release": "node build.js --release"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "fs-extra": "^11.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fanhr/caj2pdfinZotero.git"
+  },
+  "author": "Fanhr",
+  "license": "GLWTPL",
+  "bugs": {
+    "url": "https://github.com/Fanhr/caj2pdfinZotero/issues"
+  }
+}

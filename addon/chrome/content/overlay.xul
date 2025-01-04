@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://caj2pdf/skin/style.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://caj2pdf/locale/overlay.dtd">
+
+<overlay id="caj2pdf-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <popup id="zotero-itemmenu">
+    <menuitem id="caj2pdf-convert"
+              label="&caj2pdf.menu.label;"
+              oncommand="Zotero.CAJ2PDF.convertSelected();"
+              insertafter="zotero-itemmenu-show-in-library"/>
+  </popup>
+
+  <menupopup id="zotero-pane-gear-popup">
+    <menuitem id="caj2pdf-preferences"
+              label="&caj2pdf.preferences.label;"
+              oncommand="Zotero.CAJ2PDF.openPreferences();"/>
+  </menupopup>
+</overlay> 

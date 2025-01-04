@@ -1,0 +1,10 @@
+{
+  "name": "caj2pdf-resources",
+  "version": "1.0.0",
+  "private": true,
+  "files": [
+    "caj2pdf/**/*",
+    "lib/**/*",
+    "converter.py"
+  ]
+} 

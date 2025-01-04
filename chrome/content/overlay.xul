@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://caj2pdf/skin/style.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://caj2pdf/locale/overlay.dtd">
+
+<overlay id="caj2pdf-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+         
+  <script type="application/javascript">
+    if (!window.CAJ2PDFPlugin) {
+      Services.scriptloader.loadSubScript(
+        "chrome://caj2pdf/content/modules/prefs.js",
+        window
+      );
+      Services.scriptloader.loadSubScript(
+        "chrome://caj2pdf/content/modules/installer.js",
+        window
+      );
+      Services.scriptloader.loadSubScript(
+        "chrome://caj2pdf/content/modules/converter.js",
+        window
+      );
+      Services.scriptloader.loadSubScript(
+        "chrome://caj2pdf/content/modules/fileWatcher.js",
+        window
+      );
+      Services.scriptloader.loadSubScript(
+        "chrome://caj2pdf/content/background.js",
+        window
+      );
+    }
+  </script>
+  
+  <menupopup id="zotero-itemmenu">
+    <menuitem id="caj2pdf-convert"
+              label="转换为PDF"
+              oncommand="window.CAJ2PDFPlugin.convertSelected();"
+              class="menuitem-iconic"/>
+  </menupopup>
+  
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="caj2pdf-preferences"
+              label="CAJ2PDF 设置"
+              oncommand="window.openDialog('chrome://caj2pdf/content/preferences.xhtml', 
+                        'caj2pdf-preferences', 'chrome,titlebar,toolbar,centerscreen')"/>
+  </menupopup>
+</overlay> 

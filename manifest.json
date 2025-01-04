@@ -1,0 +1,73 @@
+{
+  "manifest_version": 2,
+  "name": "CAJ2PDF Converter",
+  "version": "1.0.0",
+  "description": "自动将 Zotero 中的 CAJ 文件转换为 PDF 格式",
+  "author": "Your Name",
+  "homepage_url": "https://github.com/your-username/zotero-caj2pdf",
+  "icons": {
+    "48": "chrome/content/icons/icon.png",
+    "96": "chrome/content/icons/icon@2x.png"
+  },
+  "applications": {
+    "zotero": {
+      "id": "caj2pdf@example.com",
+      "update_url": "https://example.com/updates.json",
+      "strict_min_version": "6.0",
+      "strict_max_version": "7.*"
+    }
+  },
+  "permissions": [
+    "storage",
+    "downloads",
+    "notifications",
+    "nativeMessaging"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "background": {
+    "scripts": [
+      "src/modules/installer.js",
+      "src/modules/converter.js",
+      "src/modules/fileWatcher.js",
+      "src/background.js"
+    ],
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "src/ui/preferences.xhtml",
+    "browser_style": true
+  },
+  "experiment_apis": {
+    "zoteroAPI": {
+      "schema": "schema/zotero.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["zotero"]],
+        "script": "src/api/zotero.js"
+      }
+    }
+  },
+  "preferences": [{
+    "name": "pythonPath",
+    "title": "Python路径",
+    "description": "Python可执行文件的路径",
+    "type": "string",
+    "value": ""
+  }, {
+    "name": "autoConvert",
+    "title": "自动转换",
+    "description": "添加CAJ文件时自动转换为PDF",
+    "type": "bool",
+    "value": true
+  }, {
+    "name": "keepOriginal",
+    "title": "保留原文件",
+    "description": "转换后保留原始CAJ文件",
+    "type": "bool",
+    "value": true
+  }],
+  
+  "prefs": {
+    "chrome_url": "chrome://caj2pdf/content/preferences.xhtml"
+  }
+} 

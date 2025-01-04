@@ -1,0 +1,3 @@
+PyPDF2>=2.0.0
+mupdf-tools>=1.19.0
+jbig2dec>=0.19 

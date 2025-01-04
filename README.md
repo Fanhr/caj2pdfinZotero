@@ -75,3 +75,39 @@ caj2pdf outlines test.caj -o printed.pdf
 
 本项目基于 [GLWTPL](https://github.com/me-shaon/GLWTPL)  (Good Luck With That Public License) 许可证开源。
 
+# 开发zotero中将caj文件自动转换为pdf的插件
+
+## 项目背景
+zotero中可以导入caj文件，但是caj文件不能直接转换为pdf，需要手动转换，非常麻烦。
+
+## 项目目标
+开发一个zotero插件，能够自动将文献中的caj格式文件转换为pdf，并放在对应的条目下，方便阅读。
+
+## 技术方案
+1. 使用caj2pdf作为核心转换工具
+2. 开发Zotero插件，通过WebExtensions API实现文件监控和自动转换
+3. 主要功能模块：
+   - 文件监控：监听Zotero附件目录中的caj文件
+   - 格式转换：调用caj2pdf进行文件转换
+   - 文件管理：将转换后的pdf文件关联到原条目
+   - 用户界面：提供转换进度显示和设置选项
+
+## 开发环境
+- Zotero 7+
+- Node.js
+- WebExtensions API
+- caj2pdf
+
+## 实现步骤
+1. 搭建Zotero插件开发环境
+2. 实现caj文件监控功能
+3. 集成caj2pdf转换工具
+4. 开发用户界面
+5. 测试和优化
+6. 打包发布
+
+## 参考资料
+1. Zotero插件开发指南：[https://zotero-chinese.com/plugin-dev-guide/](https://zotero-chinese.com/plugin-dev-guide/)
+2. WebExtensions API文档：[https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions)
+3. caj2pdf项目：[https://github.com/caj2pdf/caj2pdf](https://github.com/caj2pdf/caj2pdf)
+
